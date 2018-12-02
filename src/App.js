@@ -1,27 +1,24 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import MusicPlayer from "./MusicPlayer";
 
 class App extends Component {
+  state = {
+    data: [
+      {
+        duration: "00:00:28",
+        title: "crowd",
+        audioSource:
+          "https://www.sample-videos.com/audio/mp3/crowd-cheering.mp3"
+      },
+      {
+        duration: "00:00:45",
+        title: "wave",
+        audioSource: "https://www.sample-videos.com/audio/mp3/wave.mp3"
+      }
+    ]
+  };
   render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+    return <MusicPlayer data={this.state.data} />;
   }
 }
 
